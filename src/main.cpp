@@ -14,10 +14,10 @@ Display display;
 void setup()
 {
   display.begin();
+  display.message(20, 10, 1, "System x1");
 }
 
 void loop()
 {
-  display.message(20, 10, 1, "System x1");
-  delay(2000);
+  display.update();
 }
