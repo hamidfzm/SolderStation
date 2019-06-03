@@ -4,29 +4,20 @@
  * Turns on an LED on for one second,
  * then off for one second, repeatedly.
  */
-#include "Arduino.h"
+#include <Arduino.h>
 
-#ifndef LED_BUILTIN
-#define LED_BUILTIN 13
-#endif
+#include "Display.h"
+
+Display display;
+
 
 void setup()
 {
-  // initialize LED digital pin as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
+  display.begin();
 }
 
 void loop()
 {
-  // turn the LED on (HIGH is the voltage level)
-  digitalWrite(LED_BUILTIN, HIGH);
-
-  // wait for a second
-  delay(200);
-
-  // turn the LED off by making the voltage LOW
-  digitalWrite(LED_BUILTIN, LOW);
-
-   // wait for a second
-  delay(200);
+  display.message(20, 10, 1, "System x1");
+  delay(2000);
 }
